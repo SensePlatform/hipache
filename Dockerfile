@@ -4,7 +4,7 @@ RUN apt-get install -y python-software-properties python g++ make
 RUN add-apt-repository -y ppa:chris-lea/node.js
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe" >> /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get -y install nodejs=0.10.28-1chl1~precise1
+RUN apt-get -y install nodejs=0.10.29-1chl1~precise1
 RUN npm install node-etcd@2.1.1 -g
 RUN mkdir /work
 ADD package.json /work/
