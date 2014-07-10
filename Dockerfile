@@ -11,6 +11,5 @@ ADD package.json /work/
 RUN cd work && npm install
 ADD . /work
 ENV NODE_ENV production
-EXPOSE 80 443
-VOLUME [ "/ssl" ]
+EXPOSE 80
 CMD ["/usr/bin/node", "/work/bin/hipache", "-c", "/work/config/config.json"]
