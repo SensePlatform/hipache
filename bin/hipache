@@ -4,6 +4,7 @@
 'use strict';
 
 var fs = require('fs'),
+    eson = require('eson'),
     path = require('path'),
     cluster = require('cluster'),
     util = require('util'),
@@ -39,9 +40,12 @@ if (!configFile) {
 util.log('Loading config from ' + configFile);
 
 fs.readFile(configFile, function (err, data) {
+
     if (err) {
         throw new Error('Couldn\'t locate requested config file at: ' + configFile);
     }
+
+    data = eson().use(eson.env('HIPACHE_')).parse(data.toString());
 
     var config;
     try {

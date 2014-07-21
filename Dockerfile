@@ -11,5 +11,6 @@ ADD package.json /work/
 RUN cd work && npm install
 ADD . /work
 ENV NODE_ENV production
+ENV HIPACHE_DRIVER etcd://10.1.42.1:4001
 CMD ["/usr/bin/node", "/work/bin/hipache", "-c", "/work/config/config.json"]
 EXPOSE 80
