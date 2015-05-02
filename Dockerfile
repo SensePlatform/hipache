@@ -1,5 +1,4 @@
-# NOTE: I was getting errors from the explicit node.js install steps, this is easier
-FROM senseplatform/base
+FROM senseplatform/base:907c036e1e4789cc5b04f743e0af6a2358915219
 
 RUN npm install node-etcd@2.1.1 -g
 RUN mkdir /work
